@@ -11,7 +11,7 @@
 backend:
   name: github
   # SUBSTITUA pelo endereço do seu repositório GitHub:
-  repo: SEU_USUARIO/rotary-nh-25julho
+  repo: NicholasJoazeiro/rotary25dejulho
   branch: main
 
 # Ativa o editorial workflow (rascunhos → revisão → publicação)
