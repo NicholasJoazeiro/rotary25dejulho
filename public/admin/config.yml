@@ -10,9 +10,10 @@
 
 backend:
   name: github
-  # SUBSTITUA pelo endereço do seu repositório GitHub:
   repo: NicholasJoazeiro/rotary25dejulho
   branch: main
+  base_url: https://rotary25dejulho.n-ber-joa.workers.dev
+  auth_endpoint: api/auth
 
 # Ativa o editorial workflow (rascunhos → revisão → publicação)
 publish_mode: editorial_workflow
