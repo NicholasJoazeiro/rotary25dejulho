@@ -12,7 +12,7 @@ backend:
   name: github
   repo: NicholasJoazeiro/rotary25dejulho
   branch: main
-  base_url: https://rotary25dejulho.n-ber-joa.workers.dev
+  base_url: https://rotary25dejulho.pages.dev
   auth_endpoint: api/auth
 
 # Ativa o editorial workflow (rascunhos → revisão → publicação)
