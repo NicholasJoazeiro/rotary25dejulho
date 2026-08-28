@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Ativa o Netlify Identity para usar o Decap CMS com git-gateway
+[[plugins]]
+  package = "@netlify/plugin-gatsby"
+
+[dev]
+  command = "npm run dev"
+  port = 4321

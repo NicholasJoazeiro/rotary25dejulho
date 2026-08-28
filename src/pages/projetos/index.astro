@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const projetos = [
+  {
+    slug: 'robotica-nas-escolas',
+    emoji: '🤖',
+    area: 'Educação e Tecnologia',
+    titulo: 'Robótica nas Escolas Públicas',
+    resumo: 'Desde 2015, transformamos o ensino público municipal com kits de robótica STEM. Mais de R$142.000 investidos, 440+ crianças/ano, 13 escolas contempladas.',
+    stats: [
+      { n: 'R$142k+', label: 'Investidos' },
+      { n: '440+', label: 'Alunos/ano' },
+      { n: '13', label: 'Escolas' },
+    ],
+    cor: 'from-rotary-blue to-rotary-azure',
+  },
+  {
+    slug: 'nrdc-iluminar',
+    emoji: '💡',
+    image: '/images/Iluminar ONG.jpg',
+    area: 'Desenvolvimento Comunitário',
+    titulo: 'NRDC Iluminar — Educação e Saúde',
+    resumo: 'Inaugurado em 17/02/2022 no bairro Santo Afonso, o Núcleo atende ~24 mil habitantes com serviços de saúde, alfabetização e inclusão digital.',
+    stats: [
+      { n: '24k', label: 'Habitantes' },
+      { n: '2022', label: 'Inauguração' },
+      { n: '8', label: 'Computadores doados' },
+    ],
+    cor: 'from-rotary-gold to-yellow-400',
+  },
+  {
+    slug: 'cadeiras-de-rodas',
+    emoji: '♿',
+    area: 'Acessibilidade e Saúde',
+    titulo: 'Lacres por Mobilidade',
+    resumo: '365.000 lacres reciclados = 1 cadeira de rodas. 44 cadeiras doadas até junho/2023, e em fevereiro/2025, a 1ª prótese ortopédica do Distrito 4670.',
+    stats: [
+      { n: '44', label: 'Cadeiras doadas' },
+      { n: '1ª', label: 'Prótese Dist. 4670' },
+      { n: '365k', label: 'Lacres/cadeira' },
+    ],
+    cor: 'from-rotary-azure to-blue-400',
+  },
+  {
+    slug: 'cafe-colonial',
+    emoji: '☕',
+    image: '/images/Cafe colonial.jpg',
+    area: 'Captação de Recursos',
+    titulo: 'Café Colonial Beneficente Drive-Thru',
+    resumo: 'Evento Drive-Thru que eliminou gargalos logísticos e maximiza a conversão de receita. 5ª edição em 13/jun/2026 · R$170 por módulo (até 4 pessoas).',
+    stats: [
+      { n: '5ª', label: 'Edição 2026' },
+      { n: 'R$170', label: 'Por módulo' },
+      { n: '100%', label: 'Para robótica' },
+    ],
+    cor: 'from-amber-500 to-rotary-gold',
+  },
+  {
+    slug: 'costelao-na-mao',
+    emoji: '🥩',
+    image: '/images/Costelão.jpg',
+    area: 'Captação de Recursos',
+    titulo: 'Costelão na Mão',
+    resumo: 'Realizado todo novembro, o evento converte voluntários e simpatizantes em doadores indiretos. Os fundos financiam diretamente a doação de robôs para escolas municipais.',
+    stats: [
+      { n: 'Nov', label: 'Todo ano' },
+      { n: '100%', label: 'Para projetos' },
+      { n: '🥩', label: 'Tradição local' },
+    ],
+    cor: 'from-red-500 to-orange-500',
+  },
+  {
+    slug: 'reconstruindo-rs',
+    emoji: '🏗️',
+    image: '/images/Reconstruindo RS.jpg',
+    area: 'Proteção Ambiental / Desastres',
+    titulo: 'Reconstruindo RS',
+    resumo: 'Em colaboração com o Rotary de Indaial (SC), o projeto se dedica à reconstrução perene de instituições sociais afetadas pelas calamidades climáticas no Rio Grande do Sul.',
+    stats: [
+      { n: 'RS', label: 'Rio Grande do Sul' },
+      { n: 'SC', label: 'Parceiro Indaial' },
+      { n: '♻️', label: 'Sustentabilidade' },
+    ],
+    cor: 'from-green-500 to-rotary-azure',
+  },
+];
+---
+
+<Layout
+  title="Projetos e Ações"
+  description="Conheça os projetos e ações sociais do Rotary Club de Novo Hamburgo 25 de Julho — robótica, saúde, acessibilidade e desenvolvimento comunitário."
+>
+
+  <!-- Header -->
+  <section class="bg-gradient-to-br from-rotary-dark to-rotary-blue py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="section-subtitle text-rotary-gold mb-2">Impacto real, auditável</p>
+      <h1 class="font-display text-5xl font-bold text-white mb-4">Projetos e Ações</h1>
+      <p class="text-blue-100 text-lg max-w-2xl">
+        Mais do que doações pontuais: construímos infraestrutura social de longo prazo com orçamentos transparentes e impacto mensurável.
+      </p>
+    </div>
+  </section>
+
+  <!-- Grid de Projetos -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projetos.map(p => (
+          <article class="card group flex flex-col">
+            {p.image ? (
+              <div class="relative overflow-hidden h-48">
+                <img src={p.image} alt={p.titulo} class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/20"></div>
+              </div>
+            ) : (
+              <div class={`bg-gradient-to-br ${p.cor} p-10 flex items-center justify-center`}>
+                <span class="text-7xl group-hover:scale-110 transition-transform duration-300">{p.emoji}</span>
+              </div>
+            )}
+            <div class="p-6 flex flex-col flex-1">
+              <p class="section-subtitle text-xs mb-2">{p.area}</p>
+              <h2 class="font-display text-xl font-bold text-rotary-blue mb-3 leading-snug">{p.titulo}</h2>
+              <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-1">{p.resumo}</p>
+
+              <!-- Mini stats -->
+              <div class="grid grid-cols-3 gap-2 mb-5 bg-rotary-light rounded-xl p-3">
+                {p.stats.map(s => (
+                  <div class="text-center">
+                    <p class="font-display font-bold text-rotary-blue text-base">{s.n}</p>
+                    <p class="text-gray-500 text-xs">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <a href={`/projetos/${p.slug}`} class="btn-secondary text-sm justify-center py-2">
+                Saiba mais
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Doação -->
+  <section class="bg-rotary-blue py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-display text-3xl font-bold text-white mb-4">Quer apoiar esses projetos?</h2>
+      <p class="text-blue-100 text-lg mb-8">Doe via PIX, torne-se uma Empresa Cidadã ou participe voluntariamente.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contato#doe" class="btn-primary">Fazer uma doação</a>
+        <a href="/contato#empresa-cidada" class="btn-ghost">Empresa Cidadã</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

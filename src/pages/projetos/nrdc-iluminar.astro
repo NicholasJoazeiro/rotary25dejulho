@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="NRDC Iluminar"
+  description="Inaugurado em 17/02/2022 no bairro Santo Afonso, o Núcleo Rotário de Desenvolvimento Comunitário Iluminar atende ~24 mil habitantes com saúde, educação e inclusão digital."
+>
+
+  <section class="relative overflow-hidden" style="min-height: 340px;">
+    <img src="/images/Iluminar ONG.jpg" alt="NRDC Iluminar" class="absolute inset-0 w-full h-full object-cover object-center" />
+    <div class="absolute inset-0 bg-rotary-dark/70"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-20">
+      <a href="/projetos" class="text-blue-200 hover:text-white text-sm flex items-center gap-1 mb-6">
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Todos os projetos
+      </a>
+      <p class="section-subtitle text-rotary-gold mb-2">Desenvolvimento Comunitário · Saúde · Educação</p>
+      <h1 class="font-display text-5xl font-bold text-white mb-4">NRDC Iluminar</h1>
+      <p class="text-blue-100 text-lg max-w-2xl">Um núcleo comunitário de referência que transformou o bairro Santo Afonso desde 2022.</p>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2 space-y-8">
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <p>
+            O aprofundamento das raízes do clube na comunidade materializou-se na criação de um <strong>Núcleo Rotário de Desenvolvimento Comunitário (NRDC)</strong>. Inaugurado oficialmente em <strong>17 de fevereiro de 2022</strong> no bairro Santo Afonso, o projeto Iluminar transcendeu a fase inicial e converteu-se em uma <strong>associação jurídica independente</strong>.
+          </p>
+
+          <h2 class="font-display text-rotary-blue">Uma área de alta vulnerabilidade</h2>
+          <p>
+            O núcleo atua em uma região que congrega cerca de <strong>24 mil habitantes</strong> em condição de alta vulnerabilidade social. Instalado em um amplo complexo cedido em comodato pela <em>Paróquia Sagrado Coração de Jesus</em>, o projeto é coordenado no âmbito rotário por <strong>Heitor Luiz Borella</strong> e <strong>Irineu Carlos Flesch</strong>, enquanto a associação em si é presidida por <strong>Marlize Fabiana de Souza</strong>.
+          </p>
+
+          <h2 class="font-display text-rotary-blue">Serviços multifacetados</h2>
+          <p>O escopo de atendimento é multifacetado:</p>
+          <ul>
+            <li><strong>Odontologia:</strong> Consultórios para atendimento da comunidade</li>
+            <li><strong>Fonoaudiologia:</strong> Liderada por Dagmar Spessatto</li>
+            <li><strong>Alfabetização de adultos:</strong> Área dedicada ao letramento</li>
+            <li><strong>Vacinação:</strong> Hub logístico para campanhas da iniciativa global End Polio Now</li>
+          </ul>
+
+          <h2 class="font-display text-rotary-blue">Inclusão Digital: projeto "Unidos pelo Saber"</h2>
+          <p>
+            A inclusão digital é tratada com extrema seriedade através do braço intitulado <strong>"Unidos pelo Saber"</strong>. Por meio de uma parceria estratégica com o Distrito 4670 e a <em>Unimed Vale dos Sinos</em>, foram entregues e instalados <strong>oito computadores completos</strong> no núcleo.
+          </p>
+          <p>
+            Esta doação eliminou barreiras de acesso tecnológico, estabelecendo a base sobre a qual o <strong>curso de "Robótica de Sucata"</strong> passou a ser lecionado — ampliando o horizonte vocacional de jovens à margem do ensino tradicional.
+          </p>
+        </div>
+      </div>
+
+      <aside class="space-y-6">
+        <div class="bg-rotary-light rounded-2xl p-6">
+          <h3 class="font-bold text-rotary-blue mb-4">Dados do Núcleo</h3>
+          <div class="space-y-4">
+            {[
+              { n: '17/02/2022', label: 'Data de inauguração' },
+              { n: '~24.000', label: 'Habitantes no entorno' },
+              { n: '8', label: 'Computadores doados' },
+              { n: 'Santo Afonso', label: 'Bairro de atuação' },
+            ].map(s => (
+              <div class="text-center bg-white rounded-xl p-4 shadow-sm">
+                <p class="font-display text-2xl font-bold text-rotary-gold">{s.n}</p>
+                <p class="text-gray-600 text-xs mt-1">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-rotary-gold text-white rounded-2xl p-6">
+          <h3 class="font-bold mb-3">Visite o Iluminar</h3>
+          <p class="text-yellow-100 text-sm mb-4">Conheça o site do NRDC Iluminar para informações detalhadas sobre os serviços e horários de atendimento.</p>
+          <a href="https://iluminarnh.org" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white text-rotary-gold font-bold px-4 py-2 rounded-lg text-sm hover:bg-yellow-50 transition-colors w-full justify-center">
+            Acessar iluminarnh.org
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="border border-gray-100 rounded-2xl p-6">
+          <h3 class="font-bold text-rotary-blue mb-3">Liderança</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li>👤 Heitor Luiz Borella — Coordenador Rotário</li>
+            <li>👤 Irineu Carlos Flesch — Coordenador Rotário</li>
+            <li>👤 Marlize F. de Souza — Presidente da Associação</li>
+            <li>👤 Dagmar Spessatto — Fonoaudiologia</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</Layout>

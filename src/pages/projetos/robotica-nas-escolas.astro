@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Robótica nas Escolas Públicas"
+  description="Desde 2015, o Rotary NH 25 de Julho investe em robótica educacional nas escolas públicas de Novo Hamburgo. Mais de R$142.000 e 440 crianças/ano beneficiadas."
+>
+
+  <section class="bg-gradient-to-br from-rotary-dark to-rotary-blue py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <a href="/projetos" class="text-blue-200 hover:text-white text-sm flex items-center gap-1 mb-6">
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Todos os projetos
+      </a>
+      <p class="section-subtitle text-rotary-gold mb-2">Educação · Tecnologia · STEM</p>
+      <h1 class="font-display text-5xl font-bold text-white mb-4">Robótica nas Escolas Públicas</h1>
+      <p class="text-blue-100 text-lg max-w-2xl">Inserindo ciência e tecnologia de ponta no cotidiano de estudantes de baixa renda desde 2015.</p>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2 space-y-8">
+
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <p>
+            Este projeto representa o ápice da atuação inovadora do clube, alterando o paradigma do que se espera de uma entidade filantrópica comunitária ao inserir ciência e tecnologia de ponta no cotidiano de estudantes de baixa renda.
+          </p>
+          <h2 class="font-display text-rotary-blue">Desde 2015 transformando escolas</h2>
+          <p>
+            Desde sua concepção em <strong>2015</strong>, a iniciativa logrou um investimento auditável superior a <strong>R$142.000,00</strong>. A infraestrutura fornecida já beneficia, em base anual, mais de <strong>440 crianças</strong>, abrangendo <strong>12 escolas municipais e 1 escola estadual</strong>.
+          </p>
+          <p>
+            Instituições como a <em>EMEB Hermes da Fonseca</em> e a <em>EMEB Presidente Floriano Peixoto</em> figuram entre as contempladas mais recentemente, evidenciando o ritmo contínuo de doações.
+          </p>
+
+          <h2 class="font-display text-rotary-blue">Inclusão real: adaptação para deficiências</h2>
+          <p>
+            O nível de sofisticação e inclusão do projeto é comprovado pela <strong>adaptação de um kit de robótica exclusivo para alunos acometidos por deficiências auditivas e visuais</strong>, sublinhando os valores de equidade adotados pelo clube.
+          </p>
+
+          <h2 class="font-display text-rotary-blue">Parceria com a equipe Under Control 1156</h2>
+          <p>
+            O sucesso da iniciativa não advém apenas da compra de insumos, mas da <strong>transferência de conhecimento estruturada</strong>. O clube estabeleceu uma aliança técnica poderosa com a equipe de robótica profissional <strong>Under Control 1156</strong>, oriunda do Colégio Marista Pio XII.
+          </p>
+          <p>
+            Esta simbiose permite que os alunos da rede pública não apenas recebam os componentes de montagem, mas se inspirem no padrão de excelência de equipes já laureadas em competições.
+          </p>
+
+          <h2 class="font-display text-rotary-blue">Mostra "Robôs que Transformam"</h2>
+          <p>
+            O corolário deste esforço é a celebração anual do conhecimento através da mostra estudantil <strong>"Robôs que Transformam"</strong>. Este evento, realizado em edições passadas em novembro de 2024 e projetado para outubro de 2025 nas instalações do Colégio Marista Pio XII, atua como uma feira de inovação onde os alunos apresentam soluções de engenharia desenvolvidas durante o ano.
+          </p>
+
+          <h2 class="font-display text-rotary-blue">Destaque: Vito Pacheco Isoppo</h2>
+          <p>
+            Para ilustrar o impacto individual do programa, destaca-se a trajetória de <strong>Vito Pacheco Isoppo</strong>. Com apenas 19 anos, o jovem representou o ápice dos resultados do programa ao consolidar sua paixão pela robótica em prêmios internacionais e atuações na Alemanha e nos Estados Unidos — provando materialmente a eficácia da iniciativa.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-6">
+        <div class="bg-rotary-light rounded-2xl p-6">
+          <h3 class="font-bold text-rotary-blue mb-4">Números do Projeto</h3>
+          <div class="space-y-4">
+            {[
+              { n: 'R$ 142.000+', label: 'Investidos desde 2015' },
+              { n: '440+', label: 'Crianças beneficiadas por ano' },
+              { n: '13', label: 'Escolas contempladas' },
+              { n: '2015', label: 'Ano de início' },
+            ].map(s => (
+              <div class="text-center bg-white rounded-xl p-4 shadow-sm">
+                <p class="font-display text-3xl font-bold text-rotary-gold">{s.n}</p>
+                <p class="text-gray-600 text-xs mt-1">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-rotary-blue text-white rounded-2xl p-6">
+          <h3 class="font-bold mb-3">Apoie este projeto</h3>
+          <p class="text-blue-100 text-sm mb-4">Cada R$150 viabiliza um kit de robótica adicional para uma escola pública.</p>
+          <a href="/contato#doe" class="btn-primary w-full justify-center text-sm">Fazer doação via PIX</a>
+          <p class="text-center text-blue-200 text-xs mt-3">CNPJ: 16.366.682/0001-90</p>
+        </div>
+
+        <div class="border border-gray-100 rounded-2xl p-6">
+          <h3 class="font-bold text-rotary-blue mb-3">Parceiros</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li>🏫 Colégio Marista Pio XII</li>
+            <li>🤖 Equipe Under Control 1156</li>
+            <li>🏥 Unimed Vale dos Sinos</li>
+            <li>🏢 Esquadrias Scheid</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</Layout>

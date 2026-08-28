@@ -1,0 +1,345 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Início" description="Rotary Club de Novo Hamburgo 25 de Julho. Crie Impacto Duradouro. Robótica nas escolas, NRDC Iluminar, cadeiras de rodas e muito mais desde 1968.">
+
+  <!-- ===== HERO ===== -->
+  <section class="relative bg-rotary-blue overflow-hidden min-h-[92vh] flex items-center">
+    <div class="absolute inset-0 opacity-5" style="background-image: url('/images/logo.png'); background-size: 300px; background-repeat: repeat;"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-rotary-dark via-rotary-blue to-rotary-azure opacity-90"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 py-24 w-full">
+      <div class="max-w-2xl mb-16">
+        <p class="text-rotary-gold font-bold uppercase tracking-widest text-sm mb-4">Pessoas em Ação · Desde 1968</p>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          Juntos, nós<br/>
+          <span class="font-marker text-rotary-gold text-3xl sm:text-5xl lg:text-6xl">transformamos</span><br/>
+          vidas.
+        </h1>
+        <p class="text-blue-100 text-lg leading-relaxed mb-8 max-w-xl">
+          O Rotary Club de Novo Hamburgo 25 de Julho conecta líderes profissionais para causar mudanças duradouras no Vale dos Sinos. Educação, saúde, acessibilidade e tecnologia em ação há mais de 55 anos.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/projetos" class="btn-primary">Conheça nossos projetos</a>
+          <a href="/contato#doe" class="btn-ghost">Faça uma doação</a>
+        </div>
+      </div>
+
+      <!-- Stats — faixa horizontal editorial -->
+      <div class="border-t border-white/20 pt-10 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-white/20">
+        {[
+          { n: '55+', label: 'Anos de história', sub: 'Fundado em 1968' },
+          { n: 'R$ 142k', label: 'Investidos em robótica', sub: 'Nas escolas públicas' },
+          { n: '440+', label: 'Alunos beneficiados', sub: '13 escolas municipais' },
+          { n: '44', label: 'Cadeiras de rodas doadas', sub: 'À comunidade local' },
+        ].map(s => (
+          <div class="lg:px-6 lg:first:pl-0 lg:last:pr-0">
+            <p class="text-4xl font-sans font-bold text-white leading-none">{s.n}</p>
+            <p class="text-rotary-gold font-semibold text-sm mt-2">{s.label}</p>
+            <p class="text-blue-300 text-xs mt-0.5">{s.sub}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="h-6 w-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== AREAS DE ENFOQUE ===== -->
+  <section class="py-16 bg-rotary-dark">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-10">
+        <p class="section-subtitle text-rotary-gold mb-2">Rotary International</p>
+        <h2 class="font-display text-3xl font-bold text-white">Nossas Áreas de Enfoque</h2>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        {[
+          { num: '01', label: 'Promoção da Paz' },
+          { num: '02', label: 'Saúde e Prevenção' },
+          { num: '03', label: 'Água e Saneamento' },
+          { num: '04', label: 'Saúde Materno-Infantil' },
+          { num: '05', label: 'Educação' },
+          { num: '06', label: 'Desenvolvimento Comunitário' },
+          { num: '07', label: 'Meio Ambiente' },
+        ].map(a => (
+          <div class="w-full sm:w-auto flex items-center gap-3 border border-white/15 px-5 py-3 hover:border-rotary-gold/60 hover:bg-white/5 transition-colors">
+            <span class="text-rotary-gold font-mono font-bold text-xs">{a.num}</span>
+            <span class="text-white font-semibold text-sm">{a.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJETOS DESTAQUE ===== -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-14">
+        <p class="section-subtitle mb-2">Nosso impacto</p>
+        <h2 class="section-title">Projetos que Transformam</h2>
+        <p class="text-gray-500 mt-3 max-w-xl">Mais do que doações pontuais: construímos infraestrutura social de longo prazo com transparência e impacto auditável.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-0 border border-gray-100">
+
+        <!-- Projeto 1: Robótica -->
+        <article class="border-r border-gray-100 flex flex-col">
+          <div class="bg-rotary-blue h-2"></div>
+          <div class="p-7 flex flex-col flex-1">
+            <p class="text-rotary-gold font-bold text-xs uppercase tracking-widest mb-4">Educação e Tecnologia</p>
+            <h3 class="font-display text-2xl font-bold text-rotary-blue mb-3 leading-snug">Robótica nas Escolas Públicas</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1">Desde 2015, transformamos o ensino público com kits de robótica STEM. Mais de R$142.000 investidos, 440 crianças por ano e 13 escolas beneficiadas, incluindo adaptações para alunos com deficiência.</p>
+            <div class="border-t border-gray-100 pt-5 grid grid-cols-3 gap-3 mb-6">
+              {[['R$142k+','Investidos'],['440+','Alunos/ano'],['13','Escolas']].map(([n,l]) => (
+                <div>
+                  <p class="font-sans font-bold text-xl text-rotary-blue">{n}</p>
+                  <p class="text-gray-400 text-xs">{l}</p>
+                </div>
+              ))}
+            </div>
+            <a href="/projetos/robotica-nas-escolas" class="btn-secondary text-sm justify-center py-2">Ver projeto</a>
+          </div>
+        </article>
+
+        <!-- Projeto 2: Iluminar -->
+        <article class="border-r border-gray-100 flex flex-col">
+          <div class="bg-rotary-gold h-2"></div>
+          <div class="p-7 flex flex-col flex-1">
+            <p class="text-rotary-gold font-bold text-xs uppercase tracking-widest mb-4">Desenvolvimento Comunitário</p>
+            <h3 class="font-display text-2xl font-bold text-rotary-blue mb-3 leading-snug">NRDC Iluminar</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1">Inaugurado em fevereiro de 2022, o Núcleo Rotário do bairro Santo Afonso atende cerca de 24 mil habitantes com odontologia, fonoaudiologia, alfabetização e inclusão digital.</p>
+            <div class="border-t border-gray-100 pt-5 grid grid-cols-3 gap-3 mb-6">
+              {[['24k','Habitantes'],['2022','Inauguração'],['8','Computadores']].map(([n,l]) => (
+                <div>
+                  <p class="font-sans font-bold text-xl text-rotary-blue">{n}</p>
+                  <p class="text-gray-400 text-xs">{l}</p>
+                </div>
+              ))}
+            </div>
+            <a href="/projetos/nrdc-iluminar" class="btn-secondary text-sm justify-center py-2">Ver projeto</a>
+          </div>
+        </article>
+
+        <!-- Projeto 3: Cadeiras de Rodas -->
+        <article class="flex flex-col">
+          <div class="bg-rotary-azure h-2"></div>
+          <div class="p-7 flex flex-col flex-1">
+            <p class="text-rotary-gold font-bold text-xs uppercase tracking-widest mb-4">Acessibilidade e Saúde</p>
+            <h3 class="font-display text-2xl font-bold text-rotary-blue mb-3 leading-snug">Lacres por Mobilidade</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1">365.000 lacres de alumínio reciclados financiam uma cadeira de rodas. Com 44 cadeiras doadas e a 1ª prótese ortopédica do Distrito 4670 entregue em fevereiro de 2025, a iniciativa cresce a cada dia.</p>
+            <div class="border-t border-gray-100 pt-5 grid grid-cols-3 gap-3 mb-6">
+              {[['44','Cadeiras'],['1ª','Prótese dist.'],['365k','Lacres/cadeira']].map(([n,l]) => (
+                <div>
+                  <p class="font-sans font-bold text-xl text-rotary-blue">{n}</p>
+                  <p class="text-gray-400 text-xs">{l}</p>
+                </div>
+              ))}
+            </div>
+            <a href="/projetos/cadeiras-de-rodas" class="btn-secondary text-sm justify-center py-2">Ver projeto</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="mt-10">
+        <a href="/projetos" class="btn-primary">Ver todos os projetos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOSSA HISTÓRIA ===== -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="section-subtitle mb-2">Conheça nossa história</p>
+        <h2 class="section-title mb-6">Mais de 55 Anos de Serviço no Vale dos Sinos</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Fundado em <strong>1968</strong>, o Rotary Club de Novo Hamburgo 25 de Julho é uma das entidades filantrópicas mais tradicionais da região. Ao longo de mais de cinco décadas, o clube transitou de ações assistencialistas pontuais para tornar-se um vetor de desenvolvimento socioeducativo de alta complexidade.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Em novembro de 2023, celebramos nosso <strong>jubileu de 55 anos</strong>. A força da instituição reside na perenidade: independente das trocas anuais de gestão, o compromisso com a comunidade permanece inabalável.
+        </p>
+        <a href="/quem-somos" class="btn-primary">Nossa história completa</a>
+      </div>
+      <div class="overflow-hidden shadow-lg">
+        <img
+          src="/images/Time Rotary.jpg"
+          alt="Time do Rotary Club de Novo Hamburgo 25 de Julho"
+          class="w-full h-full object-cover object-center"
+          style="max-height: 420px;"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUOTE / LEMA ===== -->
+  <section class="bg-rotary-blue py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: url('/images/logo.png'); background-size: 400px; background-repeat: repeat;"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <p class="text-rotary-gold font-bold uppercase tracking-widest text-sm mb-6">Lema do Ano Rotário 2025/2026</p>
+      <p class="font-display text-4xl md:text-5xl text-white font-bold leading-tight mb-6">
+        Crie Impacto Duradouro
+      </p>
+      <p class="text-blue-200 text-lg max-w-2xl mx-auto">
+        Nossa missão é servir ao próximo, difundir a integridade e promover a boa vontade, a paz e a integração mundial, no Vale dos Sinos e além.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+        <a href="/quem-somos" class="btn-ghost">Nossa história</a>
+        <a href="/contato" class="btn-primary">Junte-se a nós</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRÓXIMOS EVENTOS ===== -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
+        <div>
+          <p class="section-subtitle mb-1">Na agenda</p>
+          <h2 class="section-title">Próximos Eventos</h2>
+        </div>
+        <a href="/contato" class="btn-secondary text-sm">Ver calendário completo</a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          {
+            date: 'Nov 2026',
+            weekday: 'Domingo',
+            title: 'Costelão na Mão',
+            desc: 'Tradicional evento de arrecadação realizado todo novembro. Os recursos financiam diretamente a doação de kits de robótica para as escolas municipais.',
+            badge: 'Beneficente',
+            color: 'bg-rotary-blue',
+          },
+          {
+            date: 'Out 2026',
+            weekday: 'A confirmar',
+            title: 'Robôs que Transformam: Mostra Estudantil',
+            desc: 'Feira de inovação onde alunos das escolas públicas apresentam seus projetos de robótica desenvolvidos ao longo do ano. Edição anterior: nov/2024.',
+            badge: 'Educação',
+            color: 'bg-rotary-azure',
+          },
+        ].map(ev => (
+          <div class="bg-white border border-gray-100 flex gap-5 p-6 hover:border-rotary-blue transition-colors">
+            <div class={`${ev.color} text-white p-4 text-center flex flex-col items-center justify-center min-w-[72px] shrink-0`}>
+              <p class="text-xs font-bold opacity-80 leading-tight">{ev.weekday}</p>
+              <p class="text-sm font-bold leading-tight mt-1">{ev.date}</p>
+            </div>
+            <div>
+              <span class={`text-xs font-bold px-2 py-0.5 mb-2 inline-block ${ev.color} text-white uppercase tracking-wider`}>{ev.badge}</span>
+              <h3 class="font-bold text-rotary-blue text-base leading-snug mb-1">{ev.title}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">{ev.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Reuniões semanais separado, sem card -->
+      <div class="mt-6 border-t border-gray-200 pt-6 flex items-center gap-4">
+        <div class="bg-rotary-blue text-white px-4 py-2 font-bold text-sm">Toda Quinta, 20h</div>
+        <div>
+          <p class="font-bold text-rotary-blue">Reuniões Semanais do Clube</p>
+          <p class="text-gray-500 text-sm">Sede: Rua Marcílio Dias, 1725. Visitantes e convidados são bem-vindos. Fale conosco antes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ÚLTIMAS NOTÍCIAS ===== -->
+  <section class="py-20 bg-white border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
+        <div>
+          <p class="section-subtitle mb-1">Fique por dentro</p>
+          <h2 class="section-title">Últimas Notícias</h2>
+        </div>
+        <a href="/noticias" class="btn-secondary text-sm">Ver todas as notícias</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          { slug: 'escolas-recebem-kits-robotica-2026', data: '13/08/2026', cat: 'Robótica e Educação', titulo: 'Escolas de Novo Hamburgo recebem kits de robótica', resumo: 'A Emeb Hermes da Fonseca e a Emeb Presidente Floriano Peixoto foram contempladas com kits de robótica em investimento de quase R$30 mil.' },
+          { slug: 'posse-presidente-irineu-flesch', data: '26/06/2026', cat: 'Clube', titulo: 'Posse do Novo Presidente do clube', resumo: 'Assume a presidência o companheiro Irineu Carlos Flesch, com lema "Crie Impacto Duradouro" para o ano rotário 2025/2026.' },
+          { slug: 'entrega-protese-geison-2025', data: '03/03/2025', cat: 'Acessibilidade', titulo: 'Um Novo Caminho: primeira prótese do Distrito 4670', resumo: 'Momento histórico: o clube entregou a primeira prótese ortopédica concedida por um clube do Distrito 4670.' },
+        ].map(n => (
+          <article class="border border-gray-100 hover:border-rotary-blue transition-colors group flex flex-col">
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-xs font-bold text-rotary-gold uppercase tracking-wider">{n.cat}</span>
+                <span class="text-gray-200">·</span>
+                <time class="text-xs text-gray-400">{n.data}</time>
+              </div>
+              <h3 class="font-display font-bold text-rotary-blue text-lg mb-3 leading-snug group-hover:text-rotary-azure transition-colors flex-1">{n.titulo}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">{n.resumo}</p>
+              <a href={`/noticias/${n.slug}`} class="text-rotary-blue font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                Leia mais
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA EMPRESA CIDADÃ ===== -->
+  <section class="py-16 bg-white border-t">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="section-subtitle mb-2">Para empresas</p>
+        <h2 class="section-title mb-4">Seja uma Empresa Cidadã</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Formalize um compromisso de doação a partir de <strong>US$1.000/ano</strong> e receba o selo internacional <em>Empresa Cidadã</em> da Fundação Rotária. Use como diferencial de ESG e <strong>deduza até 2% do lucro operacional</strong> perante a Receita Federal.
+        </p>
+        <ul class="space-y-2 text-gray-600 text-sm mb-6">
+          {[
+            '100% dos valores chegam aos projetos, sem taxa administrativa',
+            'Uso legal da logomarca de parceiro Rotary em comunicações ESG',
+            'Certificados de Apreciação e progressão para selos Prata, Ouro e Diamante',
+            'Possibilidade de nomear colaboradores ao título Paul Harris Fellow',
+          ].map(item => (
+            <li class="flex items-start gap-2">
+              <svg class="h-4 w-4 text-rotary-gold mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/empresa-cidada" class="btn-primary">Saiba mais sobre Empresa Cidadã</a>
+      </div>
+
+      <div class="bg-rotary-light p-8">
+        <h3 class="font-bold text-rotary-blue mb-5 text-lg">Parceiros que acreditam em nós</h3>
+        <div class="space-y-3">
+          {['Unimed Vale dos Sinos', 'Esquadrias Scheid', 'Domínio Tributário', 'Colégio Marista Pio XII'].map((p, i) => (
+            <div class="flex items-center gap-3 bg-white p-4 border-l-4 border-rotary-gold">
+              <span class="text-rotary-gold font-bold font-mono text-xs w-5">0{i+1}</span>
+              <p class="text-gray-700 font-semibold text-sm">{p}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-xs text-gray-400 mt-4">Quer sua empresa aqui? Entre em contato.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PIX / DOE ===== -->
+  <section id="doe" class="bg-rotary-gold py-14">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-display text-3xl font-bold text-white mb-3">Apoie agora via PIX</h2>
+      <p class="text-yellow-100 text-lg mb-6">Qualquer valor faz diferença. 100% revertido para nossos projetos.</p>
+      <div class="inline-flex items-center gap-3 bg-white px-8 py-4 shadow-lg">
+        <div class="text-left">
+          <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Chave PIX</p>
+          <p class="text-rotary-blue font-bold text-xl">16.366.682/0001-90</p>
+        </div>
+      </div>
+      <p class="text-yellow-100 text-sm mt-4">CNPJ · Rotary Club de Novo Hamburgo 25 de Julho</p>
+    </div>
+  </section>
+
+</Layout>

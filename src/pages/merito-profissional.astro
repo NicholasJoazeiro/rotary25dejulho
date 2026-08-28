@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const homenageados = [
+  { nome: 'Adauto Miguel Fröelich', profissao: 'Contador', ano: 2006 },
+  { nome: 'Adolfo Antônio Klein', profissao: 'Técnico Químico', ano: 2007 },
+  { nome: 'Adriana Leal', profissao: 'Empresária', ano: 2023 },
+  { nome: 'Alberto Emílio Bohlke', profissao: 'Empresário', ano: 2017 },
+  { nome: 'Alberto Oliveira', profissao: 'Pecuarista', ano: 2010 },
+  { nome: 'Alcindo Berlitz', profissao: 'Agricultor', ano: 2018 },
+  { nome: 'Alexandre Nasi Beltrão', profissao: 'Engenheiro Civil', ano: 2009 },
+  { nome: 'Alexandre Zeni', profissao: 'Administrador / Professor', ano: 2005 },
+  { nome: 'Álvaro Francisco Costa de Queiroz', profissao: 'Contador', ano: 2023 },
+  { nome: 'Ana Jussara Lustosa', profissao: 'Professora', ano: 2015 },
+  { nome: 'Anderson dos Santos Arcanjo', profissao: 'Tradutor', ano: 2012 },
+  { nome: 'Ângelo Reinheimer', profissao: 'Curador de Museu', ano: 2019 },
+  { nome: 'Antônio Weck', profissao: 'Advogado', ano: 2016 },
+  { nome: 'Ari Carlos Welter', profissao: 'Empresário (Restaurantes)', ano: 2014 },
+  { nome: 'Berlise Anchau', profissao: 'Promotora de Eventos', ano: 2005 },
+  { nome: 'Bibiane Dias Rossi', profissao: 'Diretora de Escola', ano: 2016 },
+  { nome: 'Carla Feller', profissao: 'Diretora Executiva / Marketing', ano: 2017 },
+  { nome: 'Carla Rosana da Silva', profissao: 'Administradora de Empresas', ano: 2019 },
+  { nome: 'Carlos Augusto Silveira Rodrigues Alves', profissao: 'Representante Comercial', ano: 2005 },
+  { nome: 'Cláudia Chesini', profissao: 'Gestão em Educação', ano: 2012 },
+  { nome: 'Cláudio Holz', profissao: 'Comerciante (Móveis Escritório)', ano: 2010 },
+  { nome: 'Cláudio José Bonenberger', profissao: 'Militar', ano: 2008 },
+  { nome: 'Cléber Ribeiro Alvares da Silva', profissao: 'Neuropediatra / Professor', ano: 2015 },
+  { nome: 'Clóvis Schwan', profissao: 'Advogado', ano: 2007 },
+  { nome: 'Criseldes Maria Jucinsky', profissao: 'Professora', ano: 2008 },
+  { nome: 'Cristina Elisa Kirsch Bergonsi', profissao: 'Psicóloga', ano: 2019 },
+  { nome: 'Daniel Ângelo Donaduzzi', profissao: 'Analista de Sistemas', ano: 2006 },
+  { nome: 'Dejair Krumenan', profissao: 'Jornalista', ano: 2016 },
+  { nome: 'Délcio Haines Becker', profissao: 'Contador', ano: 2005 },
+  { nome: 'Demary Kegler', profissao: 'Educadora Social', ano: 2018 },
+  { nome: 'Denise Cassel', profissao: 'Advogada', ano: 2006 },
+  { nome: 'Denise Siqueira Pacheco', profissao: 'Professora de Dança', ano: 2017 },
+  { nome: 'Dílson Gonçalves Pinheiro', profissao: 'Médico Auditor', ano: 2006 },
+  { nome: 'Dionísio Kipper', profissao: 'Contador', ano: 2008 },
+  { nome: 'Dirceu Barra Yllana', profissao: 'Dentista', ano: 2010 },
+  { nome: 'Edgar S. Soares', profissao: 'Adestrador de Cães', ano: 2008 },
+  { nome: 'Eduardo Cassel', profissao: 'Engenheiro Químico', ano: 2006 },
+  { nome: 'Eduardo Oliveira César', profissao: 'Delegado de Polícia', ano: 2005 },
+  { nome: 'Ehrardt Burghardt', profissao: 'Administrador de Empresas', ano: 2006 },
+  { nome: 'Elaine Cristina Daltoé', profissao: 'Fisioterapeuta', ano: 2015 },
+  { nome: 'Emerson dos Santos', profissao: 'Empresário (Automação Industrial)', ano: 2016 },
+  { nome: 'Ênio Erni Klein', profissao: 'Líder Setorial', ano: 2019 },
+  { nome: 'Everton Luis da Rosa', profissao: 'Fotógrafo', ano: 2014 },
+  { nome: 'Fábio Barbieri', profissao: 'Publicitário', ano: 2005 },
+  { nome: 'Felipe Kuhn Braun', profissao: 'Jornalista / Escritor / Vereador', ano: 2019 },
+  { nome: 'Fernando Astolfi', profissao: 'Advogado', ano: 2008 },
+  { nome: 'Flávio Júlio Daudt', profissao: 'Empresário (Comércio)', ano: 2012 },
+  { nome: 'Francisco Campos Junior', profissao: 'Policial Militar', ano: 2018 },
+  { nome: 'Francisco Carlos Xavier Costa', profissao: 'Médico Veterinário', ano: 2012 },
+  { nome: 'Frederico Reinoldo Pletsch', profissao: 'Empresário (Feiras e Eventos)', ano: 2007 },
+  { nome: 'Fu Jing', profissao: 'Comerciante', ano: 2010 },
+  { nome: 'Gilberto Mosmann', profissao: 'Consultor de Empresas', ano: 2010 },
+  { nome: 'Gilberto Müller', profissao: 'Contador', ano: 2019 },
+  { nome: 'Heitor Luiz Borella', profissao: 'Empresário (Hotelaria)', ano: 2012 },
+  { nome: 'Hilmar Kannenberg', profissao: 'Comunicador', ano: 2015 },
+  { nome: 'Hugo Raul Italiano', profissao: 'Paleiro Mecânico Automotivo', ano: 2012 },
+  { nome: 'Iara Helena Fonseca', profissao: 'Psicóloga', ano: 2005 },
+  { nome: 'Inácio Cândido Neis', profissao: 'Técnico em Instalações Prediais', ano: 2005 },
+  { nome: 'Inês Solange Mosmann', profissao: 'Corretora de Imóveis', ano: 2012 },
+  { nome: 'Jair Foscarini', profissao: 'Gestor Público', ano: 2007 },
+  { nome: 'Jair U. dos Santos Machado / Vania E. Machado', profissao: 'Professores de Dança', ano: 2010 },
+  { nome: 'Jairo Lizandro Schmitt', profissao: 'Professor de Biologia', ano: 2009 },
+  { nome: 'Janini Hackenhaar Wollmeister', profissao: 'Personal Training', ano: 2014 },
+  { nome: 'Jaqueline Fischer Zapelini', profissao: 'Arquiteta', ano: 2017 },
+  { nome: 'Jhonatã Reis Lindecker', profissao: '1º Peão Farroupilha', ano: 2018 },
+  { nome: 'João Cury', profissao: 'Médico', ano: 2008 },
+  { nome: 'João F. da Silva', profissao: 'Jogador de Futebol', ano: 2018 },
+  { nome: 'João Lauri da Silva', profissao: 'Cabeleireiro', ano: 2014 },
+  { nome: 'João Ribeiro Bittencourt Silveira', profissao: 'Médico', ano: 2010 },
+  { nome: 'João Rogério Bittencourt Silveira', profissao: 'Médico Perito', ano: 2023 },
+  { nome: 'Joelma Rejane Maino', profissao: 'Marketing / Educação', ano: 2014 },
+  { nome: 'Jorge Schmidt', profissao: 'Técnico de Voleibol', ano: 2005 },
+  { nome: 'José Correia Lessa', profissao: 'Empresário (Móveis Escritório)', ano: 2011 },
+  { nome: 'José Flávio Bueno Fischer', profissao: 'Tabelião', ano: 2016 },
+];
+
+const anosUnicos = [...new Set(homenageados.map(h => h.ano))].sort((a, b) => b - a);
+---
+
+<Layout
+  title="Mérito Profissional"
+  description="O Mérito Profissional do Rotary Club de Novo Hamburgo 25 de Julho reconhece anualmente profissionais exemplares da cidade. Conheça os homenageados."
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-rotary-dark to-rotary-blue py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="section-subtitle text-rotary-gold mb-2">Reconhecimento e valor</p>
+      <h1 class="font-display text-5xl font-bold text-white mb-4">Mérito Profissional</h1>
+      <p class="text-blue-100 text-lg max-w-2xl">
+        Celebrando histórias de valor e serviço. Desde 2005, o Rotary reconhece profissionais que moldaram Novo Hamburgo com excelência e dedicação.
+      </p>
+    </div>
+  </section>
+
+  <!-- O que é -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-start">
+      <div>
+        <p class="section-subtitle mb-2">Sobre o programa</p>
+        <h2 class="section-title mb-6">Uma Celebração de Excelência</h2>
+        <div class="space-y-4 text-gray-600 leading-relaxed">
+          <p>
+            Nas linhas da história do Rotary Club de Novo Hamburgo 25 de Julho, encontra-se um legado de distinção: o <strong>Mérito Profissional</strong>. Em 2004/2005, surgiu a ideia de transformar o reconhecimento profissional em uma celebração grandiosa, unindo o prestígio social e a força institucional do Rotary.
+          </p>
+          <p>
+            Nasceram assim as <strong>Reuniões Solenes e Festivas</strong>: encontros dedicados a valorizar os profissionais exemplares da comunidade. Cada cerimônia é carregada de significado, com trajes a rigor, como tributo simbólico ao valor de cada homenageado.
+          </p>
+          <p>
+            O critério central é a dedicação de <strong>ao menos 20 anos</strong> de contribuição notável à cidade, em qualquer profissão. O programa reconhece desde médicos e engenheiros a artistas, atletas e educadores.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h3 class="font-bold text-rotary-blue text-lg mb-5">Nossos objetivos</h3>
+        {[
+          { titulo: 'Honrar', desc: 'Reconhecer até 10 profissionais anualmente, com 20 anos de dedicação à cidade.' },
+          { titulo: 'Educar', desc: 'Compartilhar a essência do Rotary com a comunidade, transmitindo o impacto do serviço voluntário.' },
+          { titulo: 'Unir', desc: 'Fomentar relações saudáveis entre profissionais e o Rotary, fortalecendo o tecido comunitário.' },
+          { titulo: 'Inspirar', desc: 'Cultivar o ideal de Servir, destacando empreendedores e profissionais exemplares como referências.' },
+          { titulo: 'Valorizar', desc: 'Reconhecer o mérito de todas as profissões, difundindo ética e conduta exemplar.' },
+        ].map(o => (
+          <div class="flex gap-4 border-l-4 border-rotary-gold pl-4 py-1">
+            <div>
+              <p class="font-bold text-rotary-blue text-sm">{o.titulo}</p>
+              <p class="text-gray-600 text-sm mt-0.5">{o.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-12 bg-rotary-dark">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">
+        {[
+          { n: '2005', label: 'Ano de início', sub: 'Gestão inaugural' },
+          { n: '70+', label: 'Profissionais homenageados', sub: 'Em todas as edições' },
+          { n: '20+', label: 'Anos de dedicação', sub: 'Critério mínimo' },
+          { n: 'Anual', label: 'Cerimônia solene', sub: 'Todo ano rotário' },
+        ].map(s => (
+          <div class="bg-rotary-dark px-6 py-4 text-center">
+            <p class="font-sans font-bold text-3xl text-white">{s.n}</p>
+            <p class="text-rotary-gold text-sm font-semibold mt-1">{s.label}</p>
+            <p class="text-blue-300 text-xs mt-0.5">{s.sub}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lista de homenageados -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <p class="section-subtitle mb-2">Galeria de honra</p>
+        <h2 class="section-title">Nossos Homenageados</h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto">Profissionais que marcaram Novo Hamburgo com excelência, ética e serviço. Lista parcial em atualização.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        {homenageados.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR')).map(h => (
+          <div class="bg-white border border-gray-100 p-4 hover:border-rotary-gold/50 transition-colors">
+            <p class="font-semibold text-rotary-blue text-sm leading-snug">{h.nome}</p>
+            <p class="text-gray-500 text-xs mt-1">{h.profissao}</p>
+            <p class="text-rotary-gold font-bold text-xs mt-1">{h.ano}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-white border-t">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-display text-3xl font-bold text-rotary-blue mb-4">Quer indicar um profissional?</h2>
+      <p class="text-gray-600 text-lg mb-8">
+        Conhece alguém que merece o Mérito Profissional? Entre em contato com o clube e apresente a indicação.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/5551999761269" target="_blank" rel="noopener" class="btn-primary">Falar pelo WhatsApp</a>
+        <a href="/contato" class="btn-secondary">Ir para contato</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

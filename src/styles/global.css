@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;500;600;700&family=Permanent+Marker&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800 bg-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-rotary-gold text-white font-bold px-6 py-3 rounded-lg
+           hover:bg-yellow-500 transition-colors duration-200 shadow-md;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border-2 border-rotary-blue text-rotary-blue font-bold px-6 py-3 rounded-lg
+           hover:bg-rotary-blue hover:text-white transition-colors duration-200;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 border-2 border-white text-white font-bold px-6 py-3 rounded-lg
+           hover:bg-white hover:text-rotary-blue transition-colors duration-200;
+  }
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-bold text-rotary-blue leading-tight;
+  }
+  .section-subtitle {
+    @apply text-rotary-gold font-bold uppercase tracking-widest text-sm;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300;
+  }
+  .stat-number {
+    @apply font-display text-5xl font-bold text-rotary-gold;
+  }
+}

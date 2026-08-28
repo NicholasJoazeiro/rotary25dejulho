@@ -1,0 +1,175 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const noticias = [
+  {
+    slug: 'escolas-recebem-kits-robotica-2026',
+    titulo: 'Escolas de Novo Hamburgo recebem kits de robótica',
+    data: '13/08/2026',
+    dataISO: '2026-08-13',
+    categoria: 'Robótica e Educação',
+    resumo: 'Em ação do Rotary Club Novo Hamburgo 25 de Julho, a Emeb Hermes da Fonseca e a Emeb Presidente Floriano Peixoto foram contempladas com kits de robótica, em investimento de quase R$30 mil.',
+  },
+  {
+    slug: 'lema-anual-rotary',
+    titulo: 'O lema anual do Rotary',
+    data: '22/08/2026',
+    dataISO: '2026-08-22',
+    categoria: 'Rotary Internacional',
+    resumo: 'Todo ano rotário começa com um lema: uma frase curta, escolhida pelo presidente internacional, que orienta o espírito de mais de 46.000 clubes ao rongo do mundo durante 12 meses.',
+  },
+  {
+    slug: 'classificacao-profissional',
+    titulo: 'Classificação profissional',
+    data: '18/08/2026',
+    dataISO: '2026-08-18',
+    categoria: 'Sobre o Rotary',
+    resumo: 'Imagine entrar em uma organização onde há uma regra curiosa: nenhum membro pode ter a mesma profissão que outro dentro do mesmo clube. Essa não é fantasia — é um dos princípios fundadores do Rotary.',
+  },
+  {
+    slug: 'o-rotary-no-brasil-100-anos',
+    titulo: 'O Rotary no Brasil: 100 anos',
+    data: '14/08/2026',
+    dataISO: '2026-08-14',
+    categoria: 'História',
+    resumo: 'Em 1922, um grupo de profissionais se reuniu em São Paulo com um propósito que ecoa até hoje: servir à comunidade, construir amizades e contribuir para um mundo melhor.',
+  },
+  {
+    slug: 'cafe-colonial-5-edicao-2026',
+    titulo: '5º Café Colonial Drive-Thru: uma manhã que transforma',
+    data: '11/04/2026',
+    dataISO: '2026-04-11',
+    categoria: 'Eventos',
+    resumo: 'A 5ª edição do Café Colonial Beneficente Drive-Thru acontece em 13 de junho de 2026, nas Esquadrias Scheid. Kit para 4 pessoas por R$170,00, com apoio da Unimed Vale dos Sinos.',
+  },
+  {
+    slug: 'posse-presidente-irineu-flesch',
+    titulo: 'Posse do Novo Presidente do Rotary Club de Novo Hamburgo 25 de Julho',
+    data: '26/06/2026',
+    dataISO: '2026-06-26',
+    categoria: 'Clube',
+    resumo: 'Na noite de 25 de junho, o clube realizou sua cerimônia de posse em um encontro marcado por integração e reconhecimento. Assume a presidência o companheiro Irineu Carlos Flesch.',
+  },
+  {
+    slug: 'empresa-cidada-programa',
+    titulo: 'Programa Empresa Cidadã — ABTRF / Rotary International',
+    data: '07/06/2026',
+    dataISO: '2026-06-07',
+    categoria: 'Parcerias',
+    resumo: 'Uma parceria estratégica entre sua empresa e o Rotary para gerar impacto real em comunidades brasileiras, com reconhecimento institucional de alcance internacional.',
+  },
+  {
+    slug: 'costelao-na-mao-2025',
+    titulo: 'Agradecimento Especial — Costelão na Mão',
+    data: '16/10/2025',
+    dataISO: '2025-10-16',
+    categoria: 'Eventos',
+    resumo: 'O Costelão na Mão é um dos combustíveis que mantém o Rotary levando educação, tecnologia e esperança às escolas municipais. Conheça os parceiros e voluntários que tornaram tudo isso possível.',
+  },
+  {
+    slug: 'robos-que-transformam-2025',
+    titulo: 'Robôs que Transformam 2025 — Mostra de Ciência e Robótica',
+    data: '16/10/2025',
+    dataISO: '2025-10-16',
+    categoria: 'Robótica e Educação',
+    resumo: 'Mostra de Ciência e Robótica no Colégio Marista Pio XII: alunos de escolas municipais apresentam seus projetos para a comunidade. Data: 23 de outubro de 2025.',
+  },
+  {
+    slug: 'visita-governador-silvio',
+    titulo: 'Noite especial com o Governador Silvio — homenagens e intercâmbio',
+    data: '13/09/2025',
+    dataISO: '2025-09-13',
+    categoria: 'Clube',
+    resumo: 'O clube viveu uma noite marcante durante a visita oficial do Governador Silvio. A programação incluiu entrega de fundos à Fundação Rotária, recepção de jovem de intercâmbio e admissão de novos companheiros.',
+  },
+  {
+    slug: 'merito-profissional-homenageados-2025',
+    titulo: 'Profissionais são homenageados com o Mérito Profissional',
+    data: '05/07/2025',
+    dataISO: '2025-07-05',
+    categoria: 'Mérito Profissional',
+    resumo: 'Os clubes Rotary Novo Hamburgo 25 de Julho e Acontece promoveram cerimônia de reconhecimento na sede da CDL, entregando o Mérito Profissional a nove profissionais de destaque.',
+  },
+  {
+    slug: 'nova-entrega-kits-robotica-2025',
+    titulo: 'Rotary 25 de Julho realiza nova entrega de kits de robótica',
+    data: '05/07/2025',
+    dataISO: '2025-07-05',
+    categoria: 'Robótica e Educação',
+    resumo: 'O clube entregou novos kits de robótica a quatro escolas municipais de Novo Hamburgo, em evento com presença de amigos, companheiros e representantes da Prefeitura.',
+  },
+  {
+    slug: 'novos-companheiros-abril-2025',
+    titulo: 'Novos Companheiros admitidos em noite festiva',
+    data: '11/04/2025',
+    dataISO: '2025-04-11',
+    categoria: 'Clube',
+    resumo: 'Em 10 de abril de 2025, o clube celebrou a admissão de dois novos companheiros em noite festiva especial, reforçando seu quadro associativo para o ano rotário.',
+  },
+  {
+    slug: 'entrega-protese-geison-2025',
+    titulo: 'Um Novo Caminho: Rotary entrega primeira prótese do Distrito 4670',
+    data: '03/03/2025',
+    dataISO: '2025-03-03',
+    categoria: 'Acessibilidade',
+    resumo: 'Na noite de 20 de fevereiro de 2025, o clube realizou um momento histórico ao entregar uma prótese ao Sr. Geison Strack da Silva — a primeira concedida por um clube do Distrito 4670.',
+  },
+  {
+    slug: 'reconstruindo-rs-solidariedade',
+    titulo: 'Solidariedade: Reconstruindo RS',
+    data: '07/03/2025',
+    dataISO: '2025-03-07',
+    categoria: 'Projetos',
+    resumo: 'Em resposta às enchentes de 2024, o Projeto Indaial — Solidariedade: Reconstruindo RS surgiu para ir além da assistência emergencial e atuar na reconstrução de instituições em Novo Hamburgo.',
+  },
+];
+
+const sorted = [...noticias].sort((a, b) => b.dataISO.localeCompare(a.dataISO));
+---
+
+<Layout
+  title="Notícias"
+  description="Acompanhe as últimas notícias, eventos e ações do Rotary Club de Novo Hamburgo 25 de Julho. Educação, tecnologia, saúde e comunidade no Vale dos Sinos."
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-rotary-dark to-rotary-blue py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="section-subtitle text-rotary-gold mb-2">Pessoas em Ação</p>
+      <h1 class="font-display text-5xl font-bold text-white mb-4">Notícias</h1>
+      <p class="text-blue-100 text-lg max-w-2xl">
+        Acompanhe as ações, eventos e iniciativas do clube e do Rotary International.
+      </p>
+    </div>
+  </section>
+
+  <!-- Grid de notícias -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sorted.map(n => (
+          <article class="border border-gray-100 hover:border-rotary-blue transition-colors group flex flex-col">
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs font-bold text-rotary-gold uppercase tracking-wider">{n.categoria}</span>
+                <span class="text-gray-300">·</span>
+                <time class="text-xs text-gray-400">{n.data}</time>
+              </div>
+              <h2 class="font-display text-lg font-bold text-rotary-blue mb-3 leading-snug group-hover:text-rotary-azure transition-colors flex-1">
+                {n.titulo}
+              </h2>
+              <p class="text-gray-600 text-sm leading-relaxed mb-5">{n.resumo}</p>
+              <a href={`/noticias/${n.slug}`} class="text-rotary-blue font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                Leia mais
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>

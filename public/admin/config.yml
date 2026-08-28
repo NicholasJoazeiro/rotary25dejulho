@@ -1,0 +1,111 @@
+# Decap CMS Configuration
+# Rotary Club de Novo Hamburgo 25 de Julho
+#
+# INSTRUÇÕES DE CONFIGURAÇÃO:
+# 1. Crie um repositório no GitHub (ex: github.com/SEU_USUARIO/rotary-nh-25)
+# 2. Ative o Cloudflare Pages conectado a esse repositório
+# 3. Substitua os valores de "repo" e "branch" abaixo
+# 4. No Cloudflare Pages → Settings → Access Policy, ative a autenticação
+# 5. Para usar git-gateway, ative o Netlify Identity no Netlify ou use Cloudflare Access
+
+backend:
+  name: github
+  # SUBSTITUA pelo endereço do seu repositório GitHub:
+  repo: SEU_USUARIO/rotary-nh-25julho
+  branch: main
+
+# Ativa o editorial workflow (rascunhos → revisão → publicação)
+publish_mode: editorial_workflow
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+locale: pt
+
+collections:
+  # ─────────────────────────────────────────────
+  # COLEÇÃO: Projetos / Ações (Folder Collection)
+  # ─────────────────────────────────────────────
+  - name: projetos
+    label: Projetos e Ações
+    label_singular: Projeto
+    folder: src/content/projetos
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Título, name: title, widget: string }
+      - { label: Data de publicação, name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: Área de Enfoque, name: area, widget: select, options:
+          ["Educação e Tecnologia", "Desenvolvimento Comunitário", "Acessibilidade e Saúde",
+           "Captação de Recursos", "Proteção Ambiental", "Promoção da Paz", "Outros"] }
+      - { label: Emoji / Ícone, name: emoji, widget: string, hint: "Ex: 🤖 🌍 ♿", default: "⭐" }
+      - { label: Resumo (para cards), name: resumo, widget: text, hint: "2-3 frases, aparece nos cards da listagem" }
+      - { label: Imagem de Capa, name: cover, widget: image, required: false }
+      - { label: Conteúdo completo, name: body, widget: markdown }
+      - label: Estatísticas
+        name: stats
+        widget: list
+        required: false
+        fields:
+          - { label: Número, name: n, widget: string }
+          - { label: Rótulo, name: label, widget: string }
+      - { label: Destaque na Home, name: destaque, widget: boolean, default: false }
+
+  # ─────────────────────────────────────────────
+  # COLEÇÃO: Diretoria (Folder Collection)
+  # ─────────────────────────────────────────────
+  - name: diretoria
+    label: Diretoria
+    label_singular: Membro
+    folder: src/content/diretoria
+    create: true
+    slug: "{{fields.nome | slugify}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Nome completo, name: nome, widget: string }
+      - { label: Cargo, name: cargo, widget: string, hint: "Ex: Presidente, Secretário, Past President, Membro Titular" }
+      - { label: Ano Rotário, name: ano, widget: string, hint: "Ex: 2025/2026", default: "2025/2026" }
+      - { label: Foto, name: foto, widget: image, required: false }
+      - { label: Biografia curta, name: bio, widget: text, required: false }
+      - { label: Profissão, name: profissao, widget: string, required: false }
+      - { label: Destaque (aparece em grid separado), name: destaque, widget: boolean, default: false }
+      - { label: Ordem de exibição, name: ordem, widget: number, default: 99 }
+
+  # ─────────────────────────────────────────────
+  # COLEÇÃO: Configurações Globais (File Collection)
+  # ─────────────────────────────────────────────
+  - name: config
+    label: Configurações Globais
+    files:
+
+      - name: home
+        label: Página Inicial (Home)
+        file: src/content/config/home.json
+        fields:
+          - { label: Subtítulo do Hero, name: hero_subtitle, widget: string, default: "Pessoas em Ação · Desde 1968" }
+          - { label: Texto do Hero (parágrafo), name: hero_text, widget: text }
+          - { label: Texto do CTA principal, name: hero_cta, widget: string, default: "Conheça nossos projetos" }
+
+      - name: contato
+        label: Informações de Contato
+        file: src/content/config/contato.json
+        fields:
+          - { label: E-mail, name: email, widget: string, default: "contato@rotary25.com.br" }
+          - { label: WhatsApp, name: whatsapp, widget: string, default: "(51) 99976-1269" }
+          - { label: Endereço, name: endereco, widget: string, default: "Rua Marcílio Dias, 1725, Novo Hamburgo, RS" }
+          - { label: Instagram, name: instagram, widget: string, default: "@rotary25" }
+          - { label: Chave PIX, name: pix, widget: string, default: "16.366.682/0001-90" }
+          - { label: Banco, name: banco, widget: string, default: "Sicredi — Ag. 0101 · CC 78255-7" }
+
+      - name: club
+        label: Dados do Clube
+        file: src/content/config/clube.json
+        fields:
+          - { label: Nome do clube, name: nome, widget: string, default: "Rotary Club de Novo Hamburgo 25 de Julho" }
+          - { label: CNPJ, name: cnpj, widget: string, default: "16.366.682/0001-90" }
+          - { label: Fundação (ano), name: fundacao, widget: string, default: "1968" }
+          - { label: Presidente atual, name: presidente, widget: string }
+          - { label: Ano rotário atual, name: ano_rotario, widget: string }

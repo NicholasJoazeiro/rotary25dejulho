@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Empresa Cidadã"
+  description="Seja uma Empresa Cidadã do Rotary Club de Novo Hamburgo 25 de Julho. Reconhecimento internacional, benefício fiscal, impacto real na comunidade."
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-rotary-dark to-rotary-blue py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="section-subtitle text-rotary-gold mb-2">Parceria estratégica</p>
+      <h1 class="font-display text-5xl font-bold text-white mb-4">Empresa Cidadã</h1>
+      <p class="text-blue-100 text-lg max-w-2xl">
+        Formalize um compromisso com a comunidade e receba reconhecimento internacional da Fundação Rotária. Responsabilidade social com resultado auditável.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-start">
+      <div>
+        <p class="section-subtitle mb-2">O que é</p>
+        <h2 class="section-title mb-6">Programa Empresa Cidadã</h2>
+        <div class="space-y-4 text-gray-600 leading-relaxed">
+          <p>
+            O <strong>Programa Empresa Cidadã</strong> é uma parceria estratégica entre sua empresa e o Rotary International, gerida no Brasil pela <strong>ABTRF</strong> (Associação Brasileira de Trustes da Fundação Rotária). É o caminho formal para empresas que desejam ir além do sucesso comercial e contribuir ativamente para o bem-estar da comunidade.
+          </p>
+          <p>
+            Ao formalizar um compromisso de doação a partir de <strong>US$1.000 por ano</strong>, sua empresa passa a fazer parte de uma rede global de líderes comprometidos com educação, saúde, paz e desenvolvimento comunitário.
+          </p>
+          <p>
+            Responsabilidade social deixou de ser diferencial para se tornar parte da identidade das empresas relevantes. O programa Empresa Cidadã oferece o reconhecimento institucional adequado a esse posicionamento.
+          </p>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="https://wa.me/5551999761269" target="_blank" rel="noopener" class="btn-primary">Falar pelo WhatsApp</a>
+          <a href="mailto:contato@rotary25.com.br" class="btn-secondary">Enviar e-mail</a>
+        </div>
+      </div>
+
+      <div class="bg-rotary-light p-8">
+        <h3 class="font-bold text-rotary-blue text-lg mb-6">Benefícios do programa</h3>
+        <ul class="space-y-4">
+          {[
+            { icon: '🌐', title: 'Reconhecimento internacional', desc: 'Selo "Empresa Cidadã" da Fundação Rotária, reconhecido em mais de 200 países.' },
+            { icon: '📊', title: 'Vantagem fiscal', desc: 'Deduza até 2% do lucro operacional perante a Receita Federal.' },
+            { icon: '🏷️', title: 'Uso da logomarca Rotary', desc: 'Utilize a logomarca de parceiro Rotary em materiais ESG e comunicação institucional.' },
+            { icon: '🏆', title: 'Paul Harris Fellow', desc: 'Nomeie colaboradores ao título Paul Harris Fellow, reconhecimento pessoal de prestígio global.' },
+            { icon: '📈', title: 'Progressão de selos', desc: 'Evolua do Certificado de Apreciação para selos Prata, Ouro e Diamante conforme contribuições.' },
+            { icon: '💯', title: '100% para projetos', desc: 'A totalidade dos valores chega aos projetos, sem taxa administrativa.' },
+          ].map(b => (
+            <li class="flex gap-3">
+              <span class="text-2xl mt-0.5">{b.icon}</span>
+              <div>
+                <p class="font-bold text-rotary-blue text-sm">{b.title}</p>
+                <p class="text-gray-600 text-sm mt-0.5">{b.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parceiros atuais -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <p class="section-subtitle mb-2">Quem acredita em nós</p>
+        <h2 class="section-title">Nossos Parceiros</h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto">Empresas que formalizaram seu compromisso com a comunidade de Novo Hamburgo por meio do Rotary.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div class="bg-rotary-dark border border-gray-100 p-8 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow">
+          <img src="/images/Scheid Esquadrias.svg" alt="Esquadrias Scheid" class="h-14 w-auto object-contain" />
+          <p class="text-gray-400 text-xs text-center uppercase tracking-wider">Parceiro Oficial</p>
+        </div>
+
+        <div class="bg-white border border-gray-100 p-8 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow">
+          <img src="/images/Logo Unimed2.png" alt="Unimed Vale dos Sinos" class="h-14 w-auto object-contain" />
+          <p class="text-gray-500 text-xs text-center uppercase tracking-wider">Parceiro Oficial</p>
+        </div>
+
+        <div class="bg-white border border-gray-100 p-8 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow">
+          <img src="/images/Supereconomico Redefort.jpg" alt="Supereconômico Redefort" class="h-14 w-auto object-contain" />
+          <p class="text-gray-500 text-xs text-center uppercase tracking-wider">Parceiro Oficial</p>
+        </div>
+
+        <div class="bg-white border border-gray-100 p-8 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow">
+          <img src="/images/Catev.png" alt="Catev" class="h-14 w-auto object-contain" />
+          <p class="text-gray-500 text-xs text-center uppercase tracking-wider">Parceiro Oficial</p>
+        </div>
+
+      </div>
+
+      <p class="text-center text-gray-400 text-sm mt-8">Quer sua empresa nesta lista? Entre em contato e saiba como.</p>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <p class="section-subtitle mb-2">Passo a passo</p>
+        <h2 class="section-title">Como se tornar Empresa Cidadã</h2>
+      </div>
+      <div class="space-y-6">
+        {[
+          { n: '01', title: 'Entre em contato', desc: 'Fale com nossa equipe pelo WhatsApp ou e-mail para receber o material informativo completo sobre o programa.' },
+          { n: '02', title: 'Defina o nível de contribuição', desc: 'A partir de US$1.000 anuais (equivalente em reais), escolha o valor alinhado à estratégia ESG da sua empresa.' },
+          { n: '03', title: 'Formalize a parceria', desc: 'Assine o termo de parceria com o clube. O registro é feito junto à ABTRF e à Fundação Rotária Internacional.' },
+          { n: '04', title: 'Receba seu reconhecimento', desc: 'Obtenha o selo Empresa Cidadã, a documentação para dedução fiscal e o suporte para uso da marca Rotary em suas comunicações.' },
+          { n: '05', title: 'Acompanhe o impacto', desc: 'Receba relatórios de impacto dos projetos financiados, com fotos, dados e resultados verificáveis.' },
+        ].map(s => (
+          <div class="flex gap-5 items-start">
+            <div class="bg-rotary-blue text-white font-mono font-bold text-sm px-3 py-2 shrink-0">{s.n}</div>
+            <div>
+              <h3 class="font-bold text-rotary-blue mb-1">{s.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="bg-rotary-blue py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-display text-3xl font-bold text-white mb-4">Sua empresa pode fazer a diferença</h2>
+      <p class="text-blue-100 text-lg mb-8">
+        Junte-se às empresas que já formalizaram seu compromisso com Novo Hamburgo. Nossa equipe responde em até 24 horas.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/5551999761269" target="_blank" rel="noopener" class="btn-primary">Falar pelo WhatsApp</a>
+        <a href="mailto:contato@rotary25.com.br" class="btn-ghost">Enviar e-mail</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
